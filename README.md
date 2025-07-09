@@ -48,7 +48,7 @@ PORT      STATE SERVICE       VERSION
 
 ## 2. Enumeration
 
-###LDAP Enumeration with NetExec (nxc)
+### LDAP Enumeration with NetExec (nxc)
 > **Tool:** `nxc`
 > **Purpose:** Perform anonymous LDAP queries to extract usernames and domain structure
 
