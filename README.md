@@ -8,3 +8,13 @@ Project Summary
 - **Domain Name:** `orb.corp0`
 - **Objective:** Gain initial access, enumerate the domain, escalate privileges, and extract sensitive data (e.g., password hashes, domain admin credentials).
 - **Scope:** Internal black-box test — attacker has direct network access but no initial credentials.
+
+Lab Architecture
+
+| Machine          | Role                            | IP Address     |
+|------------------|---------------------------------|----------------|
+| Kali Linux       | Attacker                        | 192.168.50.10  |
+| Windows Server   | Domain Controller (DC)          | 192.168.50.129 |
+| Windows 10       | Windows client                  |                |
+
+1. Information Gathering
