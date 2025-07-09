@@ -73,3 +73,23 @@ CN=HR,CN=Users,DC=orb,DC=corp
 CN=Management,CN=Users,DC=orb,DC=corp
 ```
 > **Success:** Anonymous access to LDAP allowed us to enumerate domain users and service accounts without credentials. 
+
+### SMB Enumeration with NetExec RID Brute Force
+
+> **Tool:** `nxc`
+> **Purpose:** Enumerate RID values via SMB to uncover domain user accounts
+
+```bash
+nxc smb 192.168.50.129 -u 'anonymous' -p '' --rid-brute > domainusers.txt
+1101: ORB\DnsAdmins (SidTypeAlias)
+1102: ORB\DnsUpdateProxy (SidTypeGroup)
+1103: ORB\alice.wonderland (SidTypeUser)
+1104: ORB\bob.builder (SidTypeUser)
+1105: ORB\jerry.cantrell (SidTypeUser)
+1106: ORB\kurt.cobain (SidTypeUser)
+1107: ORB\dana.scully (SidTypeUser)
+1108: ORB\walter.white (SidTypeUser)
+1109: ORB\james.bond (SidTypeUser)
+1110: ORB\bruce.wayne (SidTypeUser)
+```
+> **Success:** Successfully enumerated valid domain users and groups using SMB anonymous access with RID brute-forcing 
