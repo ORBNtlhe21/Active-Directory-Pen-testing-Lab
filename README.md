@@ -17,4 +17,12 @@ Lab Architecture
 | Windows Server   | Domain Controller (DC)          | 192.168.50.129 |
 | Windows 10       | Windows client                  |                |
 
-1. Information Gathering
+## 1. Information Gathering
+
+### 🔹 Nmap Scan
+
+> **Tool:** `nmap`  
+> **Purpose:** Identify open ports and running services on the target system.
+
+```bash
+nmap -sCV -p- 192.168.50.129
