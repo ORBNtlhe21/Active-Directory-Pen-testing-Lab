@@ -51,6 +51,7 @@ PORT      STATE SERVICE       VERSION
 ### LDAP Enumeration with NetExec (nxc)
 
 > **Tool:** `nxc`
+
 > **Purpose:** Perform anonymous LDAP queries to extract usernames and domain structure
 
 ```bash
@@ -77,6 +78,7 @@ CN=Management,CN=Users,DC=orb,DC=corp
 ### SMB Enumeration with NetExec RID Brute Force
 
 > **Tool:** `nxc`
+
 > **Purpose:** Enumerate RID values via SMB to uncover domain user accounts
 
 ```bash
