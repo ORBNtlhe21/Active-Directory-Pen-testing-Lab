@@ -100,7 +100,7 @@ nxc smb 192.168.50.129 -u 'anonymous' -p '' --rid-brute > domainusers.txt
 
 Using the usernames previously enumerated, several attacks were launched to gain initial access and extract service account Kerberos tickets for offline password cracking.
 
-### LDAP Description Disclosure
+### Technique 1: LDAP Description Disclosure
 
 > **Tool:** `ldapsearch`  
 > **Purpose:** Dump LDAP user attributes and look for password leaks or notes in the `description` field.
