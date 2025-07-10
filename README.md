@@ -96,7 +96,7 @@ nxc smb 192.168.50.129 -u 'anonymous' -p '' --rid-brute > domainusers.txt
 ```
 > **Success:** Successfully enumerated valid domain users and groups using SMB anonymous access with RID brute-forcing
 
-## 2. Exploitation 
+## 3. Exploitation 
 
 Using the usernames previously enumerated, several attacks were launched to gain initial access and extract service account Kerberos tickets for offline password cracking.
 
@@ -108,5 +108,5 @@ Using the usernames previously enumerated, several attacks were launched to gain
 ```bash
 ldapsearch -x -H ldap://192.168.50.129 -b "DC=orb,DC=corp" '(objectclass=person)' | grep -ia desc
 ```
-**Results:** description: 3edcxsw2#EDCXSW@
-A cleartext password was found in the description field — likely a human error or documentation leak.
+> **Results:** description: 3edcxsw2#EDCXSW@
+> A cleartext password was found in the description field — likely a human error or documentation leak.
