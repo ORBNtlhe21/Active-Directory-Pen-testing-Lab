@@ -1,4 +1,4 @@
-# Active-Directory-Pen-testing-Lab
+# Active Directory Penetration Testing Lab
 This project simulates a real-world internal penetration test in a controlled lab environment. The goal is to compromise a Windows Server 2022 Domain Controller and Internal Network using a Kali Linux attacker machine through enumeration, exploitation, and post-exploitation techniques.
 
 Project Summary
