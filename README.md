@@ -153,7 +153,7 @@ evil-winrm -i 192.168.50.129 -u clark.kent -p '3edcxsw2#EDCXSW@'
 
 > After acquiring two valid credentials, we proceeded to enumerate the orivileges the users have for potential privilege escalation.
 
-## alice.wonderland
+### alice.wonderland
 ```bash
   *Evil-WinRM* PS C:\Users\alice.wonderland\Documents> whoami /priv
 
@@ -168,5 +168,7 @@ evil-winrm -i 192.168.50.129 -u clark.kent -p '3edcxsw2#EDCXSW@'
   *Evil-WinRM* PS C:\Users\alice.wonderland\Documents> 
 
 ```
+After Compromising the two accounts, BloodHound was used to map the network and possible paths to further compromise the domain and possibly gain domain admin.
+
 
 ## 4. Privilege Escalation 
