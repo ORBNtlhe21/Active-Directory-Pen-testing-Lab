@@ -11,11 +11,11 @@ Project Summary
 
 Lab Architecture
 
-| Machine          | Role                            | IP Address     |
-|------------------|---------------------------------|----------------|
-| Kali Linux       | Attacker                        | 192.168.50.10  |
-| Windows Server   | Domain Controller (DC)          | 192.168.50.129 |
-| Windows 10       | Windows client                  |                |
+| Machine          | Role                            | 
+|------------------|---------------------------------|
+| Kali Linux       | Attacker                        | 
+| Windows Server   | Domain Controller (DC)          | 
+| Windows Server   | Internal DC                     |         
 
 ## 1. Information Gathering
 
